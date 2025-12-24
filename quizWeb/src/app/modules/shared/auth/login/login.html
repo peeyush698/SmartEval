@@ -1,0 +1,55 @@
+<div class="login-wrapper">
+  <div class="login-container">
+    
+    <div class="login-info">
+      <div class="info-content">
+        <h2 class="info-title">Welcome Back!</h2>
+        <p class="info-desc">
+          Ready to take the next step in your career? Log in to access your 
+          assessments and track your progress.
+        </p>
+        <div class="quote-box">
+          <p>"The only way to learn with your test  through live evaluation and know the your marks ."</p>
+          <span>— Mr.Peeyush Chaurasiya </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="login-form-section">
+      <div class="form-header">
+        <h1>Member Login</h1>
+        <p>Enter your credentials to continue</p>
+      </div>
+
+      <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please input your email!">
+            <nz-input-group [nzPrefix]="prefixEmail">
+              <input type="text" nz-input formControlName="email" placeholder="Email"/>
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please input your password!">
+            <nz-input-group [nzPrefix]="prefixLock">
+              <input type="password" nz-input formControlName="password" placeholder="Password"/>
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+
+        <button nz-button class="login-btn" [nzType]="'primary'" type="submit">
+          Secure Login
+        </button>
+        
+        <p class="signup-redirect">
+          New to SmartEval? <a routerLink="/register">Register now!</a>
+        </p>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+<ng-template #prefixEmail><span nz-icon nzType="mail"></span></ng-template>
+<ng-template #prefixLock><span nz-icon nzType="lock"></span></ng-template>

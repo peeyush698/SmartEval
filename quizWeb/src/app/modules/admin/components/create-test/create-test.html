@@ -1,0 +1,47 @@
+<div class="bg">
+  <div class="shape shape-1"></div>
+  <div class="shape shape-2"></div>
+
+  <div class="parent">
+    <div class="child">
+
+      <div class="form-header">
+        <h2>Create New Test</h2>
+        <p>Enter test details below to continue.</p>
+      </div>
+
+      <form nz-form [formGroup]="testForm" class="login-form" (ngSubmit)="submitForm()">
+
+        <nz-form-item>
+          <nz-form-label nzNoColon>Title</nz-form-label>
+          <nz-form-control nzErrorTip="This input is required!">
+            <input nz-input type="text" formControlName="title" placeholder="Enter quiz title e.g. 'Java Basics'" />
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+          <nz-form-label nzNoColon>Time Per Question</nz-form-label>
+          <nz-form-control nzErrorTip="This input is required!">
+            <input nz-input type="number" formControlName="time" placeholder="In seconds e.g. '60'" />
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+          <nz-form-label nzNoColon>Description</nz-form-label>
+          <nz-form-control nzErrorTip="This input is required!">
+            <textarea nz-input rows="4" formControlName="description" placeholder="What is this test about?">
+            </textarea>
+          </nz-form-control>
+        </nz-form-item>
+
+        <div class="button-container">
+          <button nz-button nzType="primary" class="login-form-button">
+            Create Test
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,113 @@
+/* --- Color Variables --- */
+$primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Purple Theme */
+$bg-color: #f0f2f5;
+$card-bg: #ffffff;
+$text-dark: #1a202c;
+$text-gray: #718096;
+$accent-color: #764ba2;
+$shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.02);
+$shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+/* --- Main Container --- */
+.main {
+  background-color: $bg-color;
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: 'Inter', sans-serif; /* Modern Font */
+}
+
+/* --- Card Styling (.test) --- */
+.test {
+  background: $card-bg;
+  border-radius: 16px;
+  border: none !important; /* Default border hatana zaroori hai */
+  box-shadow: $shadow-sm;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Left Side Accent Border (Professional Look) */
+  border-left: 5px solid $accent-color !important;
+
+  /* Hover Effect - Card Lift Up */
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-hover;
+  }
+
+  /* --- NG-ZORRO Internal Styling (Title) --- */
+  ::ng-deep .ant-card-head {
+    border-bottom: 1px solid #edf2f7;
+    padding: 0 24px;
+    min-height: 60px;
+  }
+
+  ::ng-deep .ant-card-head-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: $text-dark;
+    padding: 18px 0;
+  }
+
+  ::ng-deep .ant-card-body {
+    padding: 24px;
+  }
+
+  /* --- Typography (P tags) --- */
+  p {
+    font-size: 15px;
+    color: $text-gray;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+
+    strong {
+      color: $text-dark;
+      font-weight: 600;
+      margin-right: 8px;
+      min-width: 100px; /* Labels ko align karne ke liye */
+    }
+  }
+
+  /* --- View Test Button --- */
+  button {
+    float: right; /* Button ko right side bhejne ke liye */
+    margin-top: 15px;
+    background: $primary-gradient;
+    border: none;
+    border-radius: 30px; /* Pill Shape */
+    padding: 8px 28px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 14px 0 rgba(118, 75, 162, 0.39); /* Glow */
+    transition: all 0.3s ease;
+
+    /* Button Hover */
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(118, 75, 162, 0.23);
+      filter: brightness(1.1);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .main {
+    padding: 15px;
+  }
+  
+  ::ng-deep .ant-card-head-title {
+    font-size: 16px;
+  }
+  
+  button {
+    width: 100%; /* Mobile pe full width button */
+    float: none;
+  }
+}

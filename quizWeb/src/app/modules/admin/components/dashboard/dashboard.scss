@@ -1,0 +1,66 @@
+.main {
+  padding: 30px;
+  background-color: #f0f2f5;
+  min-height: 100vh;
+}
+
+.test {
+  width: 75%; /* Thoda aur wide kiya */
+  margin: auto;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  border-radius: 10px; /* Rounded corners for card */
+  border: none;
+  background-color: white;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px); /* Card hover par thoda upar uthega */
+  }
+}
+
+/* --- Button Styling --- */
+
+.action-buttons {
+  display: flex; /* Flexbox enable kiya */
+  justify-content: flex-end; /* Right side bhejne ke liye */
+  gap: 15px; /* Buttons ke beech gap */
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid #eee; /* Upar ek halki line */
+}
+
+/* Common Button Styles */
+button {
+  border: none;
+  border-radius: 6px; /* Rounded buttons */
+  font-weight: 600;
+  padding: 0 20px;
+  height: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out; /* Smooth animation */
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* View Test Button (Blue Gradient) */
+.btn-view {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  
+  &:hover {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    transform: translateY(-2px); /* Button thoda upar uthega */
+    box-shadow: 0 6px 12px rgba(37, 99, 235, 0.3);
+  }
+}
+
+/* Add Question Button (Green/Teal Gradient) */
+.btn-add {
+  background: linear-gradient(135deg, #10b981, #059669);
+
+  &:hover {
+    background: linear-gradient(135deg, #059669, #047857);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(16, 185, 129, 0.3);
+  }
+}

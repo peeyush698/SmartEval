@@ -1,0 +1,26 @@
+<div class="main">
+  <div nz-col nzSpan="24">
+    
+    <div *ngFor="let test of tests">
+      
+      <nz-card [nzBordered]="true" class="test" [nzTitle]="test.title">
+        
+        <p><strong>Time: </strong> {{getFormattedTime(test.time)}}</p>
+        <p><strong>Description: </strong> {{test.description}}</p>
+
+        <div class="action-buttons">
+          <button nz-button class="btn-view" [routerLink]="['/admin/view-test', test.id]">
+  View Test
+</button>
+          <button nz-button class="btn-add" routerLink="/admin/add-question/{{test.id}}">Add Question</button>
+
+          <button nz-button nzType="primary" nzDanger (click)="deleteTest(test.id)" style="margin-left: 10px;">
+  Delete Test
+</button>
+        </div>
+      
+      </nz-card>
+    </div>
+
+  </div>
+</div>

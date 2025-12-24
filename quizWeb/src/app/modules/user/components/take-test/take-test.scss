@@ -1,0 +1,117 @@
+/* --- Variables --- */
+$bg-color: #f4f7f9;
+$card-bg: #ffffff;
+$primary-color: #4a90e2; // Professional Blue
+$text-main: #2d3436;
+$text-secondary: #636e72;
+$border-color: #dfe6e9;
+$hover-color: #f1f8ff;
+$shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+.main-container {
+  background-color: $bg-color;
+  min-height: 100vh;
+  padding: 40px 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* Questions ke beech ka gap */
+}
+
+.question {
+  background: $card-bg;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: $shadow;
+  border: 1px solid $border-color;
+  transition: transform 0.2s ease;
+
+  h3 {
+    font-size: 1.2rem;
+    color: $text-main;
+    margin-bottom: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+    
+    // Question number ke liye styling (optional)
+    &::before {
+      color: $primary-color;
+      margin-right: 8px;
+    }
+  }
+
+  /* --- Options Container --- */
+  div {
+    margin-bottom: 12px;
+
+    label {
+      display: flex;
+      align-items: center;
+      padding: 12px 15px;
+      border: 2px solid $border-color;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      color: $text-secondary;
+      font-size: 1rem;
+
+      &:hover {
+        background-color: $hover-color;
+        border-color: $primary-color;
+        color: $primary-color;
+      }
+
+      input[type="radio"] {
+        margin-right: 15px;
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+        accent-color: $primary-color; /* Radio button ka color change karne ke liye */
+      }
+    }
+    input[type="radio"]:checked + label {
+       
+    }
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .question {
+    padding: 20px;
+    
+    h3 {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.time-container {
+  display: flex;
+  justify-content: flex-end; // Timer ko right side mein rakhne ke liye
+  padding: 15px;
+  position: sticky; // Scroll karte waqt timer upar hi rahega
+  top: 0;
+  z-index: 100;
+  background-color: #f8f9fa;
+
+  .timer {
+    background: #fff;
+    border: 2px solid #ff4d4f; // Danger red color for attention
+    color: #ff4d4f;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &::before {
+      content: '⏰'; // Clock icon bina image ke
+    }
+  }
+}

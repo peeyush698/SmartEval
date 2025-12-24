@@ -1,0 +1,79 @@
+/* --- Dark/Cyber Theme Variables --- */
+:host {
+  --bg-dark: #121212;
+  --card-dark: #1e1e1e;
+  --neon-accent: #00e676; /* Neon Green */
+  --text-light: #e0e0e0;
+  --input-bg: #2c2c2c;
+}
+
+/* --- Dark Background --- */
+.parent {
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* --- The Dark Card --- */
+.child {
+  width: 100%;
+  max-width: 600px;
+  background-color: var(--card-dark);
+  padding: 45px;
+  border-radius: 8px;
+  /* Glowing Border Effect */
+  box-shadow: 0 0 20px rgba(0, 230, 118, 0.1); 
+  border: 1px solid #333;
+}
+
+/* --- Labels --- */
+nz-form-label {
+  color: #a0a0a0; /* Muted gray text */
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* --- Inputs (Dark Field, Light Text) --- */
+input[nz-input] {
+  background-color: var(--input-bg);
+  border: 1px solid #444;
+  color: var(--text-light);
+  border-radius: 4px;
+  padding: 10px 15px;
+  transition: 0.3s ease;
+}
+
+input[nz-input]::placeholder {
+  color: #666;
+}
+
+input[nz-input]:focus {
+  background-color: #333;
+  border-color: var(--neon-accent); /* Neon border on click */
+  box-shadow: 0 0 8px rgba(0, 230, 118, 0.3); /* Neon Glow */
+}
+
+/* --- Button (Neon) --- */
+.login-form-button {
+  width: 100%;
+  margin-top: 30px;
+  height: 45px;
+  background-color: transparent;
+  border: 2px solid var(--neon-accent);
+  color: var(--neon-accent);
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+}
+
+.login-form-button:hover {
+  background-color: var(--neon-accent);
+  color: #000000; /* Text turns black on hover */
+  box-shadow: 0 0 15px var(--neon-accent); /* Glows when hovered */
+}

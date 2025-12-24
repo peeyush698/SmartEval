@@ -1,0 +1,68 @@
+<div class="signup-wrapper">
+  <div class="signup-container">
+    
+    <div class="signup-info">
+      <div class="info-content">
+        <h2 class="info-title">Master Your Skills with SmartEval</h2>
+        <p class="info-desc">
+          Join thousands of students and educators. 
+          SmartEval provides a seamless bridge between learning and assessment.
+        </p>
+        <ul class="feature-list">
+          <li><span nz-icon nzType="check-circle" nzTheme="outline"></span> Real-time Technical Assessments</li>
+          <li><span nz-icon nzType="check-circle" nzTheme="outline"></span> Instant Performance Analytics</li>
+          <li><span nz-icon nzType="check-circle" nzTheme="outline"></span> Career-focused Test Modules</li>
+        </ul>
+        <div class="trust-badge">
+          Trusted by 50+ Tech Institutes
+        </div>
+      </div>
+    </div>
+
+    <div class="signup-form-section">
+      <div class="form-header">
+        <h1>Create Account</h1>
+        <p>Start your assessment journey today</p>
+      </div>
+
+      <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+        <nz-form-item>
+          <nz-form-control nzHasFeedback nzErrorTip="Please enter a valid E-mail">
+            <nz-input-group [nzPrefix]="prefixEmail">
+              <input nz-input placeholder="E-mail" formControlName="email"/>
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+          <nz-form-control nzHasFeedback nzErrorTip="Password must be at least 6 characters">
+            <nz-input-group [nzPrefix]="prefixLock">
+              <input nz-input placeholder="Password" type="password" formControlName="password"/>
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please input your name">
+            <nz-input-group [nzPrefix]="prefixUser">
+              <input nz-input placeholder="Name" formControlName="name"/>
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+
+        <button nz-button class="register-btn" [nzType]="'primary'" type="submit">
+          Join SmartEval
+        </button>
+        
+        <p class="login-redirect">
+          Already a member? <a routerLink="/login">Login now!</a>
+        </p>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+<ng-template #prefixEmail><span nz-icon nzType="mail"></span></ng-template>
+<ng-template #prefixLock><span nz-icon nzType="lock"></span></ng-template>
+<ng-template #prefixUser><span nz-icon nzType="user"></span></ng-template>

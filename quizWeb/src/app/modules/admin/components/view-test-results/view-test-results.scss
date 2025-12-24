@@ -1,0 +1,80 @@
+// Main Container
+div[style*="padding: 20px"] {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  padding: 40px 20px !important;
+  font-family: 'Inter', sans-serif;
+}
+
+// Table Styling
+nz-table {
+  ::ng-deep {
+    .ant-table {
+      background: rgba(255, 255, 255, 0.9) !important;
+      backdrop-filter: blur(10px); // Glassmorphism effect
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+
+      // Header Styling
+      .ant-table-thead > tr > th {
+        background: #1f1f1f !important; // Dark premium header
+        color: #ffffff !important;
+        font-weight: 700;
+        font-size: 14px;
+        padding: 20px;
+        border-bottom: none;
+        
+        &:first-child { border-radius: 20px 0 0 0; }
+        &:last-child { border-radius: 0 20px 0 0; }
+      }
+
+      // Body Row Styling
+      .ant-table-tbody > tr {
+        background: transparent;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+        &:hover {
+          background-color: rgba(24, 144, 255, 0.05) !important;
+          transform: scale(1.01); // Slight pop-out effect
+          z-index: 10;
+        }
+
+        & > td {
+          padding: 20px;
+          border-bottom: 1px solid #f0f0f0;
+          font-size: 15px;
+          color: #434343;
+        }
+      }
+
+      // Pagination Styling
+      .ant-pagination-item-active {
+        border-color: #1f1f1f;
+        background: #1f1f1f;
+        a { color: #fff; }
+      }
+    }
+  }
+}
+
+// Custom Percentage Badge Style
+td:nth-child(5) {
+  span {
+    background: #e6f7ff;
+    color: #1890ff;
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 13px;
+    border: 1px solid #91d5ff;
+    box-shadow: 0 2px 4px rgba(24, 144, 255, 0.2);
+  }
+}
+
+// Correct Answer Highlighting
+td:nth-child(4) {
+  color: #52c41a;
+  font-weight: 600;
+}
