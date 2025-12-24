@@ -31,12 +31,10 @@ export class Login {
 
   ngOnInit() {
     this.validateForm = this.fb.group({
-      email: [null, [Validators.required, Validators.email]], // Email validator bhi joda
+      email: [null, [Validators.required, Validators.email]],
       password: [null, Validators.required]
     });
   }
-
-  // 2. Ye Function pura gayab tha, isliye button nahi chal raha tha
   submitForm() {
     this.authService.login(this.validateForm.value).subscribe(res=>{
       this.message.success(
