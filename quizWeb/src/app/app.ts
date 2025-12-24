@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-// 👇 1. Ye line check karein: CommonModule yahan hona chahiye
 import { CommonModule } from '@angular/common'; 
 import { RouterOutlet, RouterLink, RouterLinkActive, Router, NavigationEnd } from '@angular/router';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
@@ -11,7 +10,7 @@ import { UserStorage } from './modules/shared/auth/services/user-storage';
   selector: 'app-root',
   standalone: true,
   imports: [
-    CommonModule, // 👈 2. Ye line SABSE ZARURI hai (Iske bina page khali dikhega)
+    CommonModule,
     RouterOutlet, 
     RouterLink, 
     NzLayoutModule, 
