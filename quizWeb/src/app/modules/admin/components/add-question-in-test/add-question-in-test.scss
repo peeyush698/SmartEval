@@ -24,19 +24,16 @@
   background-color: var(--card-dark);
   padding: 45px;
   border-radius: 8px;
-  /* Glowing Border Effect */
   box-shadow: 0 0 20px rgba(0, 230, 118, 0.1); 
   border: 1px solid #333;
 }
 
-/* --- Labels --- */
 nz-form-label {
-  color: #a0a0a0; /* Muted gray text */
+  color: #a0a0a0; 
   font-weight: 500;
   font-size: 14px;
 }
 
-/* --- Inputs (Dark Field, Light Text) --- */
 input[nz-input] {
   background-color: var(--input-bg);
   border: 1px solid #444;
@@ -52,11 +49,10 @@ input[nz-input]::placeholder {
 
 input[nz-input]:focus {
   background-color: #333;
-  border-color: var(--neon-accent); /* Neon border on click */
-  box-shadow: 0 0 8px rgba(0, 230, 118, 0.3); /* Neon Glow */
+  border-color: var(--neon-accent); 
+  box-shadow: 0 0 8px rgba(0, 230, 118, 0.3); 
 }
 
-/* --- Button (Neon) --- */
 .login-form-button {
   width: 100%;
   margin-top: 30px;
@@ -74,6 +70,14 @@ input[nz-input]:focus {
 
 .login-form-button:hover {
   background-color: var(--neon-accent);
-  color: #000000; /* Text turns black on hover */
-  box-shadow: 0 0 15px var(--neon-accent); /* Glows when hovered */
+  color: #000000;
+  box-shadow: 0 0 15px var(--neon-accent); 
+}
+::ng-deep .ant-form-item-label > label {
+  color: #ffffff !important; 
+  font-weight: 600;         
+  font-size: 14px;
+}
+::ng-deep .ant-form-item-label > label::after {
+  color: #ffffff !important;
 }
